@@ -4,15 +4,15 @@ import { Separator } from "@/components/ui/separator";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t bg-muted/50">
+    <footer className="border-t bg-slate-800 text-white">
       <div className="container py-12">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div>
             <h3 className="mb-4 text-lg font-semibold">APEX ICONIC</h3>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted">
               Dubai property brokerage for villas, townhouses, apartments, land and commercial property.
             </p>
-            <p className="text-sm text-muted-foreground mt-2">
+            <p className="text-sm text-muted mt-2">
               Buy, sell, rent & manage with expert advisors.
             </p>
           </div>
@@ -42,7 +42,7 @@ export function SiteFooter() {
 
           <div>
             <h3 className="mb-4 text-lg font-semibold">Company</h3>
-            <p className="text-sm text-muted-foreground">{CONTACT_INFO.company}</p>
+            <p className="text-sm text-muted">{CONTACT_INFO.company}</p>
           </div>
         </div>
 

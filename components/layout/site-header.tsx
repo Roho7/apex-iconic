@@ -29,7 +29,7 @@ export function SiteHeader() {
           : "bg-transparent py-4"
       )}
     >
-      <div className="container flex items-center justify-between">
+      <div className="container flex items-center justify-between w-full">
         <Link href="/" className="flex items-center space-x-2">
           <div className="relative h-10 w-40">
              {/* Use a white logo version if available for transparent header, or filter/brightness */}
@@ -39,7 +39,7 @@ export function SiteHeader() {
               alt="Apex Iconic"
               fill
               className={cn(
-                "object-contain object-left transition-all scale-250",
+                "object-contain object-[10%_10%] md:object-left transition-all scale-180 md:scale-250 ",
                 (isScrolled || !isHome) ? "brightness-0 invert-0 dark:invert" : "brightness-0 invert" 
               )}
             />
@@ -58,7 +58,7 @@ export function SiteHeader() {
           <Link 
             href="/#story" 
             className={cn(
-              "text-sm font-medium transition-colors hover:text-primary",
+              "text-sm font-medium transition-colors hover:text-primary max-md:hidden",
               (isScrolled || !isHome) ? "text-foreground" : "text-white/90 hover:text-white"
             )}
           >

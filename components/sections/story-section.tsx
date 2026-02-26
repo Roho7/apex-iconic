@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function StorySection() {
   return (
-    <section id="story" className="relative overflow-hidden py-24 lg:py-32">
+    <section id="story" className="relative overflow-hidden py-4 lg:py-32">
       <div className="container">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           <div className="relative aspect-4/5 lg:aspect-3/4 rounded-3xl overflow-hidden shadow-2xl order-2 lg:order-1">
