@@ -2,10 +2,17 @@ import { Service, ProcessStep, ContactInfo, ServiceType, PropertyType } from "./
 
 export const SERVICES: Service[] = [
   {
-    id: "buy-sell",
-    title: "Buy / Sell",
-    description: "Expert guidance through buying or selling villas, townhouses, apartments, land, and commercial properties in Dubai's premium markets.",
+    id: "buy",
+    title: "Buy",
+    description: "Expert guidance through buying villas, townhouses, apartments, land, and commercial properties in Dubai's premium markets.",
     icon: "home",
+    linkToRegister: true,
+  },
+  {
+    id: "sell",
+    title: "Sell",
+    description: "Professional assistance in selling your property at the best value with our deep market knowledge and network.",
+    icon: "building",
     linkToRegister: true,
   },
   {
@@ -21,13 +28,6 @@ export const SERVICES: Service[] = [
     description: "Comprehensive property management services ensuring your investment is maintained, rented, and optimized for maximum returns.",
     icon: "building",
     linkToRegister: true,
-  },
-  {
-    id: "holiday-home",
-    title: "Holiday Home",
-    description: "Maximize your property's potential with professional holiday home management and short-term rental services.",
-    icon: "palmtree",
-    linkToRegister: false,
   },
 ];
 
@@ -56,13 +56,14 @@ export const PROCESS_STEPS: ProcessStep[] = [
 
 export const CONTACT_INFO: ContactInfo = {
   phone: "+971 4 2356878",
-  company: "APEX IN LLC",
+  company: "Apex Iconic Real Estate LLC",
   address: "204, Abdulbari Al Hashemi Building, 8 Al Khor Street, Deira, Dubai, UAE",
   mapLink: "https://maps.app.goo.gl/amGGTmcC9W3GjGXCA",
 };
 
 export const SERVICE_OPTIONS: { value: ServiceType; label: string }[] = [
-  { value: "buy-sell", label: "Buy / Sell" },
+  { value: "buy", label: "Buy" },
+  { value: "sell", label: "Sell" },
   { value: "rent", label: "Rent" },
   { value: "property-management", label: "Property Management" },
 ];

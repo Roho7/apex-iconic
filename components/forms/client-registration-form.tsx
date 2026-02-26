@@ -28,7 +28,7 @@ const formSchema = z
     fullName: z.string().min(2, "Full name must be at least 2 characters"),
     email: z.string().email("Please enter a valid email address"),
     phoneNumber: z.string().min(7, "Please enter a valid phone number"),
-    serviceRequired: z.enum(["buy-sell", "rent", "property-management"]),
+    serviceRequired: z.enum(["buy", "sell", "rent", "property-management"]),
     propertyType: z.enum([
       "villa",
       "townhouse",
@@ -42,7 +42,8 @@ const formSchema = z
   })
   .superRefine((data, ctx) => {
     const needsAreas =
-      data.serviceRequired === "buy-sell" ||
+      data.serviceRequired === "buy" ||
+      data.serviceRequired === "sell" ||
       data.serviceRequired === "rent";
     if (needsAreas && !data.preferredAreas?.trim()) {
       ctx.addIssue({
@@ -74,8 +75,8 @@ export function ClientRegistrationForm({
       email: "",
       phoneNumber: "",
       serviceRequired:
-        defaultService && defaultService !== "holiday-home"
-          ? (defaultService as "buy-sell" | "rent" | "property-management")
+        defaultService
+          ? (defaultService as "buy" | "sell" | "rent" | "property-management")
           : undefined,
       propertyType: undefined,
       budgetRange: "",
@@ -87,7 +88,7 @@ export function ClientRegistrationForm({
   const selectedService = form.watch("serviceRequired");
   const isBudgetDisabled = selectedService === "property-management";
   const isPreferredAreasRequired =
-    selectedService === "buy-sell" || selectedService === "rent";
+    selectedService === "buy" || selectedService === "sell" || selectedService === "rent";
 
   async function onSubmit(data: FormValues) {
     setIsSubmitting(true);

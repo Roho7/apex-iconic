@@ -1,13 +1,12 @@
 import Link from "next/link";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { SERVICES } from "@/lib/constants";
-import { Home, Key, Building, Palmtree } from "lucide-react";
+import Image from "next/image";
 
-const iconMap = {
-  home: Home,
-  key: Key,
-  building: Building,
-  palmtree: Palmtree,
+const imageMap: Record<string, string> = {
+  buy: "/buy.webp",
+  sell: "/sell.jpeg",
+  rent: "/rent.jpeg",
+  "property-management": "/property-management.jpeg",
 };
 
 export function ServicesSection() {
@@ -22,25 +21,32 @@ export function ServicesSection() {
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {SERVICES.map((service) => {
-          const Icon = iconMap[service.icon as keyof typeof iconMap];
           const card = (
-            <Card
-              className={`h-full transition-all ${
+            <div
+              className={`group relative overflow-hidden rounded-2xl aspect-3/4 transition-all ${
                 service.linkToRegister
-                  ? "cursor-pointer hover:shadow-lg hover:border-primary/50"
+                  ? "cursor-pointer"
                   : "opacity-75"
               }`}
             >
-              <CardHeader>
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <Icon className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle>{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-sm">{service.description}</CardDescription>
-              </CardContent>
-            </Card>
+              <Image
+                src={imageMap[service.id] || "/placeholder.webp"}
+                alt={service.title}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              
+              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent" />
+              
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <h3 className="text-2xl font-bold mb-2 transition-transform duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-white/80 line-clamp-2 transition-opacity duration-300 group-hover:opacity-100 opacity-90">
+                  {service.description}
+                </p>
+              </div>
+            </div>
           );
 
           return service.linkToRegister ? (

@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { Funnel_Display, Geist, Geist_Mono, Inter, Quicksand } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const funnelDisplay = Funnel_Display({
+  variable: "--font-funnel-display",
   subsets: ["latin"],
 });
 
@@ -27,9 +21,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={funnelDisplay.variable}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${funnelDisplay.variable} antialiased`}
       >
         <SiteHeader />
         {children}

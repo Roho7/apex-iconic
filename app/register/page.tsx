@@ -14,7 +14,7 @@ function RegistrationContent() {
   const defaultService = serviceParam || undefined;
 
   return (
-    <main className="container max-w-3xl py-12">
+    <main className="container max-w-3xl pt-24 pb-12">
       <div className="mb-8 text-center">
         <h1 className="mb-3 text-3xl font-bold tracking-tight sm:text-4xl">
           Register to Work With a Trusted Dubai Property Brokerage

@@ -1,4 +1,4 @@
-export type ServiceType = "buy-sell" | "rent" | "property-management" | "holiday-home";
+export type ServiceType = "buy" | "sell" | "rent" | "property-management";
 
 export type PropertyType = "villa" | "townhouse" | "apartment" | "land" | "commercial";
 

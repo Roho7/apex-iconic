@@ -11,6 +11,8 @@ export function SiteFooter() {
             <h3 className="mb-4 text-lg font-semibold">APEX ICONIC</h3>
             <p className="text-sm text-muted-foreground">
               Dubai property brokerage for villas, townhouses, apartments, land and commercial property.
+            </p>
+            <p className="text-sm text-muted-foreground mt-2">
               Buy, sell, rent & manage with expert advisors.
             </p>
           </div>

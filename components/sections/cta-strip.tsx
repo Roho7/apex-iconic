@@ -12,7 +12,7 @@ export function CTAStrip() {
           Speak with an advisor and discover how we can support your property goals
         </p>
         <Button size="lg" asChild>
-          <Link href="/register?service=buy-sell">Speak With an Advisor</Link>
+          <Link href="/register?service=buy">Speak With an Advisor</Link>
         </Button>
       </div>
     </section>
