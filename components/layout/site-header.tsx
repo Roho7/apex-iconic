@@ -39,7 +39,7 @@ export function SiteHeader() {
               alt="Apex Iconic"
               fill
               className={cn(
-                "object-contain object-[10%_10%] md:object-left transition-all scale-180 md:scale-250 ",
+                "object-contain object-[10%_10%] md:object-left transition-all scale-180 ",
                 (isScrolled || !isHome) ? "brightness-0 invert-0 dark:invert" : "brightness-0 invert" 
               )}
             />

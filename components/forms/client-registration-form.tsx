@@ -92,10 +92,32 @@ export function ClientRegistrationForm({
 
   async function onSubmit(data: FormValues) {
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log("Form submitted:", data);
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    
+    try {
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Failed to submit registration");
+      }
+
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert(
+        error instanceof Error
+          ? error.message
+          : "Failed to submit registration. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   if (isSubmitted) {
