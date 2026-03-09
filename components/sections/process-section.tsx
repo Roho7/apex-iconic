@@ -31,17 +31,17 @@ export function ProcessSection() {
             <AccordionItem
               key={step.number}
               value={`item-${step.number}`}
-              className="border border-border rounded-2xl h-full px-8 bg-card transition-all hover:shadow-md data-[state=open]:shadow-lg data-[state=open]:border-primary/30 data-[state=open]:bg-accent/5"
+              className="border border-border rounded-2xl h-full px-4 md:px-8 bg-card transition-all hover:shadow-md data-[state=open]:shadow-lg data-[state=open]:border-primary/30 data-[state=open]:bg-accent/5"
             >
-              <AccordionTrigger className="hover:no-underline py-8">
-                <div className="flex items-center gap-6 text-left w-full">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-xl font-bold shadow-xl">
+              <AccordionTrigger className="hover:no-underline py-4 md:py-8">
+                <div className="flex items-center gap-4 md:gap-6 text-left w-full">
+                  <div className="flex h-8 w-8 md:h-14 md:w-14 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-lg md:text-xl font-bold shadow-xl">
                     {step.number}
                   </div>
                   <span className="text-xl sm:text-2xl font-semibold tracking-tight">{step.title}</span>
                 </div>
               </AccordionTrigger>
-              <AccordionContent className="h-full pt-2 mb-2 pl-20 pr-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
+              <AccordionContent className="h-full md:pt-2 mb-2 pl-10 md:pl-20 pr-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
                 {step.description}
               </AccordionContent>
             </AccordionItem>
