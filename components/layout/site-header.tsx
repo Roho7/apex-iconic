@@ -7,6 +7,13 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
+function scrollToSection(id: string) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
 export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
@@ -46,8 +53,14 @@ export function SiteHeader() {
           </div>
         </Link>
         <nav className="flex items-center space-x-6">
-          <Link 
-            href="/#services" 
+          <Link
+            href="/#services"
+            onClick={(e) => {
+              if (isHome) {
+                e.preventDefault();
+                scrollToSection("services");
+              }
+            }}
             className={cn(
               "text-sm font-medium transition-colors hover:text-primary",
               (isScrolled || !isHome) ? "text-foreground" : "text-white/90 hover:text-white"
@@ -55,8 +68,14 @@ export function SiteHeader() {
           >
             Services
           </Link>
-          <Link 
-            href="/#story" 
+          <Link
+            href="/#story"
+            onClick={(e) => {
+              if (isHome) {
+                e.preventDefault();
+                scrollToSection("story");
+              }
+            }}
             className={cn(
               "text-sm font-medium transition-colors hover:text-primary max-md:hidden",
               (isScrolled || !isHome) ? "text-foreground" : "text-white/90 hover:text-white"
