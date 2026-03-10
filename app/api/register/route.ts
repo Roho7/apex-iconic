@@ -163,7 +163,7 @@ export async function POST(request: NextRequest) {
 
     const { data, error } = await resend.emails.send({
       from: "Apex Iconic Alerts <alerts@apexiconic.com>",
-      to: ["apexiconic25@gmail.com"],
+      to: ["info@apexiconic.com"],
       subject: `New Client Registration: ${fullName} - ${serviceLabels[serviceRequired]}`,
       html: emailHtml,
     });
