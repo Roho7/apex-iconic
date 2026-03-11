@@ -18,6 +18,7 @@ export interface ProcessStep {
 
 export interface ContactInfo {
   phone: string;
+  email: string;
   company: string;
   address: string;
   mapLink: string;

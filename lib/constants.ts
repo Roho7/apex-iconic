@@ -56,8 +56,9 @@ export const PROCESS_STEPS: ProcessStep[] = [
 
 export const CONTACT_INFO: ContactInfo = {
   phone: "+971 4 2356878",
+  email: "info@apexiconic.com",
   company: "Apex Iconic Real Estate LLC",
-  address: "204, Abdulbari Al Hashemi Building, 8 Al Khor Street, Deira, Dubai, UAE",
+  address: "204, Abdulbari Al Hashemi Building, 8 Al Khor Street, Al Ras, Deira, Dubai, UAE",
   mapLink: "https://maps.app.goo.gl/amGGTmcC9W3GjGXCA",
 };
 

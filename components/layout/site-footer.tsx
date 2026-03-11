@@ -1,5 +1,5 @@
 import { CONTACT_INFO } from "@/lib/constants";
-import { MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 export function SiteFooter() {
@@ -24,6 +24,12 @@ export function SiteFooter() {
                 <Phone className="h-4 w-4 mt-0.5 text-muted-foreground" />
                 <a href={`tel:${CONTACT_INFO.phone}`} className="hover:underline">
                   {CONTACT_INFO.phone}
+                </a>
+              </div>
+              <div className="flex items-start gap-2">
+                <Mail className="h-4 w-4 mt-0.5 text-muted-foreground" />
+                <a href={`mailto:${CONTACT_INFO.email}`} className="hover:underline">
+                  {CONTACT_INFO.email}
                 </a>
               </div>
               <div className="flex items-start gap-2">
