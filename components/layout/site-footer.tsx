@@ -1,5 +1,5 @@
 import { CONTACT_INFO } from "@/lib/constants";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 export function SiteFooter() {
@@ -33,7 +33,7 @@ export function SiteFooter() {
                 </a>
               </div>
               <div className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 mt-0.5 text-muted-foreground" />
+                <MapPin className="h-4 w-4 mt-0.5 text-muted-foreground shrink-0" />
                 <a
                   href={CONTACT_INFO.mapLink}
                   target="_blank"
@@ -41,6 +41,17 @@ export function SiteFooter() {
                   className="hover:underline"
                 >
                   {CONTACT_INFO.address}
+                </a>
+              </div>
+              <div className="flex items-start gap-2">
+                <Instagram className="h-4 w-4 mt-0.5 text-muted-foreground" />
+                <a
+                  href={CONTACT_INFO.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  {CONTACT_INFO.instagramName}
                 </a>
               </div>
             </div>

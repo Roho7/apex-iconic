@@ -22,6 +22,8 @@ export interface ContactInfo {
   company: string;
   address: string;
   mapLink: string;
+  instagram: string;
+  instagramName: string;
 }
 
 export interface ClientRegistrationForm {

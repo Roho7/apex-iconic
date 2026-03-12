@@ -60,6 +60,8 @@ export const CONTACT_INFO: ContactInfo = {
   company: "Apex Iconic Real Estate LLC",
   address: "204, Abdulbari Al Hashemi Building, 8 Al Khor Street, Al Ras, Deira, Dubai, UAE",
   mapLink: "https://maps.app.goo.gl/amGGTmcC9W3GjGXCA",
+  instagram: "https://www.instagram.com/apexiconicrealty?igsh=YXVld2ppeWFvY2Zi",
+  instagramName: '@apexiconicrealty'
 };
 
 export const SERVICE_OPTIONS: { value: ServiceType; label: string }[] = [
